@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bony Man | Cinnamon Fields</title>
+    <meta name="description" content="Official website of Icelandic singer/songwriter Bony Man. Stream and buy the new album Cinnamon Fields.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-wrapper"></div>
+
+    <header>
+        <a href="#" class="brand" id="nav-home">Bony Man</a>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#singles">Singles</a></li>
+                <li><a href="https://bonymanmusic.com/collections/all" target="_blank">Store</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Cinnamon Fields</h1>
+            <p>Out now on vinyl in limited supply. Get your copy now.</p>
+            <a href="https://bonymanmusic.com/products/bony-man-cinnamon-fields-vinyl" class="cta-button" target="_blank">Order Vinyl</a>
+        </section>
+
+        <section id="singles" class="recent-singles">
+            <h2>Recent Singles</h2>
+            <div class="singles-grid">
+                <!-- It Takes a Lifetime -->
+                <div class="single-item">
+                    <a href="https://open.spotify.com/track/1tOb8Yal3JwSX6ijJuTnnU" target="_blank" class="single-link">
+                        <div class="cover-container">
+                            <img src="https://i.scdn.co/image/ab67616d0000b27340e9eff43332858eeaf5bcf6" alt="It Takes a Lifetime">
+                            <div class="play-overlay">
+                                <img src="spotify-xxl.png" alt="Play">
+                            </div>
+                        </div>
+                        <div class="single-info">
+                            <h3>It Takes a Lifetime</h3>
+                            <p>Bony Man</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- We've Been Told -->
+                <div class="single-item">
+                    <a href="https://open.spotify.com/track/4oiIKTsVmcbVFtM06JDmrp" target="_blank" class="single-link">
+                        <div class="cover-container">
+                            <img src="https://i.scdn.co/image/ab67616d0000b273d88ca817df7d6f83e07eb619" alt="We've Been Told">
+                            <div class="play-overlay">
+                                <img src="spotify-xxl.png" alt="Play">
+                            </div>
+                        </div>
+                        <div class="single-info">
+                            <h3>We've Been Told</h3>
+                            <p>Bony Man</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Past Tenses -->
+                <div class="single-item">
+                    <a href="https://open.spotify.com/track/0FYcruRTu5aadolBDJCKzf" target="_blank" class="single-link">
+                        <div class="cover-container">
+                            <img src="https://i.scdn.co/image/ab67616d0000b2733564568951243048a2a9ff27" alt="Past Tenses">
+                            <div class="play-overlay">
+                                <img src="spotify-xxl.png" alt="Play">
+                            </div>
+                        </div>
+                        <div class="single-info">
+                            <h3>Past Tenses</h3>
+                            <p>Bony Man</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="bio">
+                <h2>About Bony Man</h2>
+                <p>Icelandic singer/songwriter Bony Man (Guðlaugur Jón Árnason) creates music that is finely tuned, honest, and completely timeless. His latest work, <em>Cinnamon Fields</em>, captures the essence of his soulful storytelling and exceptional vocal range.</p>
+                
+                <div class="press-quotes">
+                    <div class="quote">
+                        "An album full of great singles and only excellent songs, finely tuned and honest."
+                        <cite>— Written in Music</cite>
+                    </div>
+                    <div class="quote">
+                        "Completely timeless, with vocals just so damn good that like me you‘ll really wonder where he’s been all this time"
+                        <cite>— Nordic Music Review</cite>
+                    </div>
+                </div>
+            </div>
+            <div class="album-art">
+                <img src="Cinnamon_Cover.jpg" alt="Cinnamon Fields Album Cover" style="width: 100%; border-radius: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+            </div>
+        </section>
+
+        <section id="contact">
+            <div style="text-align: center;">
+                <h2>Get in Touch</h2>
+                <p>For bookings, press, or just to say hello, reach out via email:</p>
+                <a href="mailto:hello@bonymanmusic.com" style="color: var(--accent-color); font-size: 1.5rem; text-decoration: none; font-weight: 700; display: block; margin-top: 20px;">hello@bonymanmusic.com</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="social-links">
+            <a href="https://open.spotify.com/artist/2U7ttVDvmvjoR9PFQM4C0p" target="_blank">
+                <img src="spotify-xxl.png" alt="Spotify">
+            </a>
+            <a href="https://www.youtube.com/channel/..." target="_blank">
+                <img src="Youtube Icon.png" alt="YouTube">
+            </a>
+            <a href="https://tidal.com/..." target="_blank">
+                <img src="Tidal Icon.png" alt="Tidal">
+            </a>
+            <a href="https://soundcloud.com/..." target="_blank">
+                <img src="Soundcloud Icon.png" alt="Soundcloud">
+            </a>
+        </div>
+        <p>&copy; 2026 Bony Man. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Simple scroll effect for the header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.height = '60px';
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                header.style.height = '70px';
+                header.style.background = 'rgba(0, 0, 0, 0.8)';
+            }
+        });
+    </script>
+</body>
+</html>
