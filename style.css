@@ -238,16 +238,24 @@ footer {
 }
 
 .singles-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end; /* Keep them on the right side with the text */
-    gap: 20px;
-    max-width: 600px; /* Reduced from 900px */
-    margin-left: auto; /* Push the whole grid to the right */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 per row on mobile */
+    gap: 15px;
+    max-width: 1200px;
+    margin: 40px auto;
+    justify-content: center;
 }
 
 .single-item {
-    width: 120px; /* Approximately 30-40% of the previous 300px size */
+    width: 100%; /* Fill the grid cell */
+    max-width: 180px; /* Limit size on desktop */
+}
+
+@media (min-width: 768px) {
+    .singles-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 30px;
+    }
 }
 
 .single-link {
