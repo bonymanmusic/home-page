@@ -239,22 +239,24 @@ footer {
 
 .singles-grid {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* This perfectly centers the row */
-    gap: 20px;
+    flex-wrap: nowrap; /* Force them onto one line on mobile if possible, or use wrap with smaller sizes */
+    justify-content: center;
+    gap: 10px; /* Reduced gap for mobile */
     max-width: 1000px;
     margin: 40px auto;
+    padding: 0 10px;
 }
 
 .single-item {
-    flex: 0 1 calc(33.333% - 20px); /* Exactly 3 per row on mobile */
-    min-width: 100px;
+    flex: 0 1 30%; /* Take up roughly a third of the space */
+    min-width: 80px; /* Allow it to shrink to fit small screens */
     max-width: 180px;
     text-align: center;
 }
 
 @media (min-width: 768px) {
     .singles-grid {
+        flex-wrap: wrap;
         gap: 40px;
     }
     .single-item {
