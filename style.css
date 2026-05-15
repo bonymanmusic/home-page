@@ -43,21 +43,9 @@ h1, h2, h3, .brand {
     background-size: 85% auto;
     background-position: top left;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
-.bg-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0; /* Align strictly to the right */
-    width: 30%; /* Only covers the rightmost 30% */
-    height: 100%;
-    backdrop-filter: blur(15px);
-    -webkit-mask-image: linear-gradient(to right, transparent, black);
-    mask-image: linear-gradient(to right, transparent, black);
-    pointer-events: none;
-}
+/* No blur pseudo-element */
 
 body {
     background-color: #000; /* Ensure the header area is black */
@@ -70,7 +58,6 @@ header {
     width: 100%;
     height: 70px;
     background: var(--nav-bg);
-    backdrop-filter: blur(8.5px); /* 15% reduction from 10px */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -158,7 +145,6 @@ nav a:hover {
 section {
     padding: 100px 10%;
     background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(4.25px); /* 15% reduction from 5px */
 }
 
 .about {
