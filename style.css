@@ -33,10 +33,10 @@ h1, h2, h3, .brand {
 /* Background Setup */
 .bg-wrapper {
     position: fixed;
-    top: 70px;
+    top: -100px; /* Cover overscroll bounce on mobile */
     left: 0;
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100vh + 100px);
     z-index: -1;
     background-color: #000;
 }
@@ -167,7 +167,7 @@ nav a:hover {
 
 /* Sections */
 section {
-    padding: 100px 10%;
+    padding: 60px 10% 100px; /* Reduced top padding from 100px */
     background: rgba(10, 10, 10, 0.8);
 }
 
@@ -239,17 +239,17 @@ footer {
 
 .singles-grid {
     display: flex;
-    flex-wrap: nowrap; /* Force them onto one line on mobile if possible, or use wrap with smaller sizes */
+    flex-wrap: nowrap;
     justify-content: center;
-    gap: 10px; /* Reduced gap for mobile */
+    gap: 18px; /* Increased from 10px for a bit more air */
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 20px auto 40px; /* Reduced top margin */
     padding: 0 10px;
 }
 
 .single-item {
-    flex: 0 1 30%; /* Take up roughly a third of the space */
-    min-width: 80px; /* Allow it to shrink to fit small screens */
+    flex: 0 1 30%;
+    min-width: 75px; /* Slightly reduced to allow more gap space */
     max-width: 180px;
     text-align: center;
 }
