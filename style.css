@@ -55,8 +55,8 @@ h1, h2, h3, .brand {
 
 .bg-blurry {
     filter: blur(20px); /* Adjust intensity as needed */
-    -webkit-mask-image: linear-gradient(to right, transparent 50%, black 90%);
-    mask-image: linear-gradient(to right, transparent 50%, black 90%);
+    -webkit-mask-image: linear-gradient(to right, transparent 50%, black 70%);
+    mask-image: linear-gradient(to right, transparent 50%, black 70%);
 }
 
 /* Optional: Keep the dark gradient overlay on the whole wrapper for text readability */
@@ -67,7 +67,7 @@ h1, h2, h3, .brand {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 90%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%);
     pointer-events: none;
 }
 
