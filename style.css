@@ -238,11 +238,16 @@ footer {
 }
 
 .singles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* Keep them on the right side with the text */
+    gap: 20px;
+    max-width: 600px; /* Reduced from 900px */
+    margin-left: auto; /* Push the whole grid to the right */
+}
+
+.single-item {
+    width: 120px; /* Approximately 30-40% of the previous 300px size */
 }
 
 .single-link {
@@ -283,8 +288,8 @@ footer {
 }
 
 .play-overlay img {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     filter: brightness(0) invert(1);
 }
 
