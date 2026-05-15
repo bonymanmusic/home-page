@@ -50,12 +50,12 @@ h1, h2, h3, .brand {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0; /* Align strictly to the right */
+    width: 30%; /* Only covers the rightmost 30% */
     height: 100%;
     backdrop-filter: blur(15px);
-    -webkit-mask-image: linear-gradient(to right, transparent 70%, black 100%);
-    mask-image: linear-gradient(to right, transparent 70%, black 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black);
+    mask-image: linear-gradient(to right, transparent, black);
     pointer-events: none;
 }
 
