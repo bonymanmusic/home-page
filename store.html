@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store | Bony Man</title>
+    <meta name="description" content="Official merch store for Bony Man. Buy vinyl, t-shirts, and limited edition items.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="store-page">
+
+    <div class="bg-wrapper">
+        <div class="bg-sharp"></div>
+        <div class="bg-blurry"></div>
+    </div>
+
+    <header>
+        <a href="index.html" class="brand">Bony Man</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#singles">Singles</a></li>
+                <li><a href="store.html" class="active">Store</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="store-container">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h1 style="font-size: 3rem; margin-bottom: 10px;">Official Merch</h1>
+            <p style="opacity: 0.7; letter-spacing: 1px; text-transform: uppercase;">Premium quality for true fans</p>
+        </div>
+
+        <div class="store-grid">
+            <!-- Vinyl -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="store/cinnamon-fields.webp" alt="Cinnamon Fields Vinyl">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <h3>Cinnamon Fields - Vinyl</h3>
+                        <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 15px;">Limited edition heavyweight vinyl. Includes digital download.</p>
+                    </div>
+                    <div class="price">4.200 kr.</div>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- T-shirt -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="store/Bony-bolur.jpg" alt="Bony Man T-shirt">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <h3>Bony Man T-shirt</h3>
+                        <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 15px;">Classic black cotton tee with high-quality screen print.</p>
+                    </div>
+                    <div class="price">3.500 kr.</div>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Limited T-shirt -->
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="store/Bony limited.jpg" alt="Limited Edition T-shirt">
+                    <img src="store/Bony limited2.jpg" alt="Limited Edition T-shirt Alternate View" class="product-image-secondary">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <h3>Limited Edition T-shirt</h3>
+                        <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 15px;">Exclusive design. Only available in limited quantities.</p>
+                    </div>
+                    <div class="price">3.500 kr.</div>
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://open.spotify.com/artist/2U7ttVDvmvjoR9PFQM4C0p" target="_blank">
+                <img src="spotify-xxl.png" alt="Spotify">
+            </a>
+            <a href="https://www.youtube.com/channel/..." target="_blank">
+                <img src="Youtube Icon.png" alt="YouTube">
+            </a>
+            <a href="https://tidal.com/..." target="_blank">
+                <img src="Tidal Icon.png" alt="Tidal">
+            </a>
+            <a href="https://soundcloud.com/..." target="_blank">
+                <img src="Soundcloud Icon.png" alt="Soundcloud">
+            </a>
+        </div>
+        <p>&copy; 2026 Bony Man. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple scroll effect for the header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.height = '60px';
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                header.style.height = '70px';
+                header.style.background = 'rgba(0, 0, 0, 0.8)';
+            }
+        });
+    </script>
+</body>
+</html>
