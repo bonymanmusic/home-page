@@ -33,19 +33,43 @@ h1, h2, h3, .brand {
 /* Background Setup */
 .bg-wrapper {
     position: fixed;
-    top: 70px; /* Anchored below the navbar */
+    top: 70px;
     left: 0;
     width: 100%;
     height: calc(100vh - 70px);
     z-index: -1;
-    background: linear-gradient(to right, rgba(0,0,0,0) 70%, rgba(0,0,0,0.8) 100%), 
-                url('BG-Bony3.jpg');
+    background-color: #000;
+}
+
+.bg-sharp, .bg-blurry {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('BG-Bony3.jpg');
     background-size: 85% auto;
     background-position: top left;
     background-repeat: no-repeat;
 }
 
-/* No blur pseudo-element */
+.bg-blurry {
+    filter: blur(20px); /* Adjust intensity as needed */
+    -webkit-mask-image: linear-gradient(to right, transparent 70%, black 100%);
+    mask-image: linear-gradient(to right, transparent 70%, black 100%);
+}
+
+/* Optional: Keep the dark gradient overlay on the whole wrapper for text readability */
+.bg-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0) 70%, rgba(0,0,0,0.8) 100%);
+    pointer-events: none;
+}
 
 body {
     background-color: #000; /* Ensure the header area is black */
