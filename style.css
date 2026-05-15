@@ -238,23 +238,27 @@ footer {
 }
 
 .singles-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 per row on mobile */
-    gap: 15px;
-    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* This perfectly centers the row */
+    gap: 20px;
+    max-width: 1000px;
     margin: 40px auto;
-    justify-content: center;
 }
 
 .single-item {
-    width: 100%; /* Fill the grid cell */
-    max-width: 180px; /* Limit size on desktop */
+    flex: 0 1 calc(33.333% - 20px); /* Exactly 3 per row on mobile */
+    min-width: 100px;
+    max-width: 180px;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
     .singles-grid {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 30px;
+        gap: 40px;
+    }
+    .single-item {
+        flex: 0 1 180px; /* Fixed size on desktop to allow up to 6 per row */
     }
 }
 
