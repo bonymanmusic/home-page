@@ -28,9 +28,17 @@
     </header>
 
     <main class="store-container">
-        <div style="text-align: center; margin-bottom: 60px;">
+        <div style="text-align: center; margin-bottom: 50px;">
             <h1 style="font-size: 3rem; margin-bottom: 10px;">Official Merch</h1>
             <p style="opacity: 0.7; letter-spacing: 1px; text-transform: uppercase;">Premium quality for true fans</p>
+            
+            <div class="currency-selector-container">
+                <span class="currency-label">Currency:</span>
+                <div class="currency-switch" id="currency-switch">
+                    <button type="button" class="currency-btn" data-currency="EUR">EUR (€)</button>
+                    <button type="button" class="currency-btn" data-currency="ISK">ISK (kr.)</button>
+                </div>
+            </div>
         </div>
 
         <div class="store-grid">
@@ -44,8 +52,8 @@
                         <h3>Cinnamon Fields - Vinyl</h3>
                         <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 15px;">Limited edition heavyweight vinyl. Includes digital download.</p>
                     </div>
-                    <div class="price">4.200 kr.</div>
-                    <button class="buy-btn">Add to Cart</button>
+                    <div class="price" data-price-eur="€30" data-price-isk="4.200 kr.">€30</div>
+                    <button class="buy-btn" data-product="vinyl">Add to Cart</button>
                 </div>
             </div>
 
@@ -59,8 +67,8 @@
                         <h3>Bony Man T-shirt</h3>
                         <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 15px;">Classic black cotton tee with high-quality screen print.</p>
                     </div>
-                    <div class="price">3.500 kr.</div>
-                    <button class="buy-btn">Add to Cart</button>
+                    <div class="price" data-price-eur="€25" data-price-isk="3.500 kr.">€25</div>
+                    <button class="buy-btn" data-product="tshirt">Add to Cart</button>
                 </div>
             </div>
 
@@ -75,8 +83,8 @@
                         <h3>Limited Edition T-shirt</h3>
                         <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 15px;">Exclusive design. Only available in limited quantities.</p>
                     </div>
-                    <div class="price">3.500 kr.</div>
-                    <button class="buy-btn">Add to Cart</button>
+                    <div class="price" data-price-eur="€25" data-price-isk="3.500 kr.">€25</div>
+                    <button class="buy-btn" data-product="tshirt-limited">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -112,6 +120,63 @@
                 header.style.background = 'rgba(0, 0, 0, 0.8)';
             }
         });
+
+        // Currency management
+        const currencyBtns = document.querySelectorAll('.currency-btn');
+        const priceEls = document.querySelectorAll('.price');
+
+        function applyCurrency(curr) {
+            currencyBtns.forEach(btn => {
+                if (btn.dataset.currency === curr) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            priceEls.forEach(el => {
+                const targetPrice = curr === 'ISK' ? el.dataset.priceIsk : el.dataset.priceEur;
+                if (targetPrice) {
+                    el.textContent = targetPrice;
+                }
+            });
+        }
+
+        function initCurrency() {
+            const saved = localStorage.getItem('bonyman_currency');
+            if (saved === 'ISK' || saved === 'EUR') {
+                applyCurrency(saved);
+                return;
+            }
+
+            // Quick default check: Atlantic/Reykjavik timezone
+            const isIcelandTz = Intl.DateTimeFormat().resolvedOptions().timeZone === 'Atlantic/Reykjavik';
+            applyCurrency(isIcelandTz ? 'ISK' : 'EUR');
+
+            // IP Geolocation check
+            fetch('https://ipapi.co/json/')
+                .then(res => res.json())
+                .then(data => {
+                    // Only apply if user hasn't manually clicked a preference in the meantime
+                    if (!localStorage.getItem('bonyman_currency')) {
+                        const isIceland = data && data.country_code === 'IS';
+                        applyCurrency(isIceland ? 'ISK' : 'EUR');
+                    }
+                })
+                .catch(() => {
+                    // Fail silently, fallback already applied
+                });
+        }
+
+        currencyBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const selected = btn.dataset.currency;
+                localStorage.setItem('bonyman_currency', selected);
+                applyCurrency(selected);
+            });
+        });
+
+        initCurrency();
     </script>
 </body>
 </html>
